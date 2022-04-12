@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\Documents\\ACADEMLO\\GIT\\academlo-rock-paper-scissors"
+		},
+		{
+			"path": "..\\e-commerce"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "e-commerce"
+	}
+}

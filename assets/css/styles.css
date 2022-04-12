@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+header{
+    background-color: blanchedalmond;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: blanchedalmond;
+    height: 60px;
+}
+
+.logo-academlo{
+    display: flex;
+    align-items: center;
+}
+
+.logo-academlo > a > img{
+    width: 45px;
+    height: 45px;
+}
+
+.logo-academlo > a {
+    margin-left: 1rem;
+}
+
+.texto-academlo{
+    text-decoration: none;
+}
+
+.menu-2 {
+    display: flex;
+    align-items: center;
+}
+
+.menu-2 > img{
+    margin-right: 1rem;
+    width: 15px;
+    height: 15px;
+
+}
+
+.menu-2 > div > img {
+    width: 15px;
+    height: 15px;
+}
+
+.menu-22{
+    margin-right: 1rem;
+}
