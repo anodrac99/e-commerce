@@ -2,17 +2,19 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family:sans-serif;
 }
 
+/* ------------------NAVBAR----------------------- */
 
 header{
-    background-color: blanchedalmond;
+    background-color: transparent;
 }
 .navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: blanchedalmond;
+    background-color: transparent;
     height: 60px;
 }
 
@@ -54,3 +56,45 @@ header{
 .menu-22{
     margin-right: 1rem;
 }
+
+
+/* ----------------principal------------------------ */
+
+.principal{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.detalles{
+    margin-left: 1.6rem;
+}
+
+
+.presentacion{
+    display: flex;
+    justify-content: end;
+}
+
+.fondo-imagen{
+    background-color: red;
+    width: 260px;
+    height: 400px;
+    position: relative;
+    bottom: 60px;
+    z-index: -1;
+}
+
+.imagen-principal {
+    width: 230px;
+    height: 260px;
+    position: relative;
+    top: 70px;
+    left: 1rem;
+}
+
+/* --------------------PRODUCTOS--------------------- */
+
+
+
+
+/* ---------------------Footer------------------------ */
