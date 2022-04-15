@@ -260,3 +260,167 @@ footer > section {
     display:flex;
     gap: 1rem;
 }
+
+
+@media screen and (min-width: 600px) {
+
+
+    /* ----------------principal------------------------ */
+
+.principal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.detalles{
+    margin-left: 100px;
+}
+
+.detalles > h3 {
+    font-size: 50px;
+    margin-bottom: .6rem;
+}
+
+.detalles > h2 {
+    font-size: 52px;
+    margin-bottom: .8rem;
+}
+
+.detalles > p {
+    font-size: 20px;
+    width: 560px;
+}
+
+.detalles > h4 {
+    font-size: 32px;
+}
+
+.botones-principal {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    
+}
+
+
+.presentacion{
+    display: flex;
+    justify-content: end;
+}
+
+.fondo-imagen{
+    width: 480px;
+    height: 680px;
+}
+
+.imagen-principal {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 150px;
+    left: 0;
+}
+
+
+/* --------------------PRODUCTOS--------------------- */
+
+.productos-contenedor{
+    margin-top: 50px;
+}
+
+ul {
+    list-style: none;
+}
+
+
+
+.productos-filtros{
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    gap: 1.5rem;
+}
+
+.producto-filtros {
+    grid-column-start: 3;
+}
+
+.producto-linea::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 40px;
+    background-color: black;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+.producto-linea {
+    position: relative;
+}
+
+.estilos-contenedor{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+.producto-fondo {
+    background-color: lightslategrey;
+    text-align: center;
+    padding: .25rem 0;
+    border-radius: 0.5rem 0.5rem 0 0;
+    width: 180px;
+    height: 180px;
+
+}
+
+.producto-fondo > img {
+    width: 150px;
+}
+
+.info-producto {
+    box-shadow: 0px -5px 15px rgb(87, 87, 87);
+    border-radius: 0 0 0.5rem 0.5rem;
+    position: relative;
+    width: 180px;
+    height: 70px;
+}
+
+
+.info-producto > h4, .info-producto > span,
+ .info-producto > p {
+     margin-left: .5rem;
+}
+
+.info-producto > h4 {
+    font-size: 1.2rem;
+    margin-top: 1.3rem;
+    display: inline-block;
+}
+
+.info-producto > span {
+    font-size: 0.8rem;
+}
+
+.boton-productos{
+    display: inline-flex;
+    position: absolute;
+    right: 1rem;
+    top: -1.25rem;
+    padding: .625rem;
+    border-radius: 50%;
+    box-shadow: 0px 5px 15px #575757;
+    cursor: pointer;
+}
+
+.boton-productos > img {
+    width: 15px;
+}
+    
+}
