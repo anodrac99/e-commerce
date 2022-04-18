@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+
 </head>
 <body>
     <header>
@@ -15,16 +17,67 @@
                 <a class="texto-academlo" href=""><b>STORE</b></a>
             </div>
             <div class="menu-2">
-                <img src="./assets/imagenes/sleep-mode.png" alt="">
+                <img src="./assets/imagenes/sleep-mode.png" alt="" id="dark-mode">
+                
                 <div class="menu-22">
-                    <img src="./assets/imagenes/shop-bag.png" alt="">
-                    <span>" "</span>
+                    <img src="./assets/imagenes/shop-bag.png"   >
+                    
                 </div>
-                <img src="./assets/imagenes/menu.png" alt="">
+                
+                <div class="icono-menu" id="hamburgesa">
+                    <img src="./assets/imagenes/menu.png" class="menu-hamburgesa">
+
+                </div>
+                
+                <div class="cont-menu active" id="menu">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#product">Product</a></li>
+                    </ul>
+
+                </div>              
+                
+                
             </div>
         </nav>
     </header>
     <main>
+        <!--CARRITO DE COMPRAS-->
+        <section class="cart show-cart" id="cart">
+            <div class="div-cerrar">
+                <img src="./assets/imagenes/close.png" alt="">
+            </div>
+
+            <div class="div-titulo">
+                <h2 class="titulo-cart">
+                    My Cart
+                </h2>
+            </div>
+
+            <div class="cart__container">
+                <div class="cart-empty">
+                    <img src="./assets/imagenes/empty-cart.png" alt="">
+                    <h2>Your cart is empty</h2>
+                    <p>You can add items to your cart by clicking on the add button on the products page</p>
+                </div>
+
+                <div class="cart__prices">
+                    <span class="cart__prices-item">
+                        <span id="items-count">0</span>
+                        "items"
+                    </span>
+                    <span class="cart__prices-total" id="cart-total">$0.00</span>
+                </div>
+                <div class="cart__checkout">
+                    <button class="button cart__btn" id="cart-checkout" disabled="disabled">"Checkout"</button>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
         <section class="principal">
             <div class="detalles">
                 <h3>New Sweatshirt</h3>
@@ -140,5 +193,6 @@
 
         </section>
     </footer>
+    <script src="./app.js"></script>
 </body>
 </html>
