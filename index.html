@@ -19,7 +19,7 @@
             <div class="menu-2">
                 <img src="./assets/imagenes/sleep-mode.png" alt="" id="dark-mode">
                 
-                <div class="menu-22">
+                <div class="menu-22" id="carrito">
                     <img src="./assets/imagenes/shop-bag.png"   >
                     
                 </div>
@@ -31,8 +31,8 @@
                 
                 <div class="cont-menu active" id="menu">
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#product">Product</a></li>
+                        <li>Home</li>
+                        <li>Product</li>
                     </ul>
 
                 </div>              
@@ -43,8 +43,8 @@
     </header>
     <main>
         <!--CARRITO DE COMPRAS-->
-        <section class="cart show-cart" id="cart">
-            <div class="div-cerrar">
+        <section class="cart" id="cart">
+            <div class="div-cerrar" id="cerrarCart">
                 <img src="./assets/imagenes/close.png" alt="">
             </div>
 
@@ -55,10 +55,92 @@
             </div>
 
             <div class="cart__container">
-                <div class="cart-empty">
+                <div class="cart-empty mostrar">
                     <img src="./assets/imagenes/empty-cart.png" alt="">
                     <h2>Your cart is empty</h2>
                     <p>You can add items to your cart by clicking on the add button on the products page</p>
+                </div>
+
+                <!-- contenido agregado al Carrito -->
+                <div class="contenidoCarrito" id="agregados">
+                    <section class="card-carrito">
+                        <img src="./assets/imagenes/featured1.png" alt="">
+                        <div>
+                            <h4>Hoddies</h4>
+                            <div class="datos-card">
+                                <span>Stock:10</span>
+                                <span>$14.00</span>
+                            </div>
+                            <span class="total-item-card">subtotal: 14.00</span>
+                            <div class="control-card">
+                                <span>
+                                    <button>
+                                        -
+                                    </button>
+                                </span>
+                                <span>
+                                    units
+                                </span>
+                                <span>
+                                    <button>
+                                        +
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="card-carrito card-fuera">
+                        <img src="./assets/imagenes/featured2.png" alt="">
+                        <div>
+                            <h4>Hoddies</h4>
+                            <div class="datos-card">
+                                <span>stock:10</span>
+                                <span>$14.00</span>
+                            </div>
+                            <span class="total-item-card">subtotal: 14.00</span>
+                            <div class="control-card">
+                                <span>
+                                    <button>
+                                        -
+                                    </button>
+                                </span>
+                                <span>
+                                    units
+                                </span>
+                                <span>
+                                    <button>
+                                        +
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="card-carrito card-fuera">
+                        <img src="./assets/imagenes/featured3.png" alt="">
+                        <div>
+                            <h4>Hoddies</h4>
+                            <div class="datos-card">
+                                <span>stock:10</span>
+                                <span class="total-item-card">$14.00</span>
+                            </div>
+                            <span class="total-item-card">subtotal: 14.00</span>
+                            <div class="control-card">
+                                <span>
+                                    <button>
+                                        -
+                                    </button>
+                                </span>
+                                <span>
+                                    units
+                                </span>
+                                <span>
+                                    <button>
+                                        +
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </section>
                 </div>
 
                 <div class="cart__prices">

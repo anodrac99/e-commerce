@@ -18,3 +18,17 @@ iconoMenu.addEventListener('click',(e)=>{
             e.target.setAttribute('src', './assets/imagenes/menu.png')
     }
 });
+
+const iconoCart = document.getElementById('carrito'),
+        carrito = document.getElementById('cart');
+
+iconoCart.addEventListener('click', (e) => {
+    carrito.classList.add('show-cart');
+});
+
+const cerrarCart = document.getElementById('cerrarCart');
+
+cerrarCart.addEventListener('click', (e) => {
+    carrito.classList.remove('show-cart')
+})
+
