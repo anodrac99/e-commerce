@@ -398,10 +398,11 @@ header{
 }
 
 .producto-fondo {
-    background-color: lightslategrey;
+    background-color: rgb(231, 231, 231);
     text-align: center;
     padding: .25rem 0;
     border-radius: 0.5rem 0.5rem 0 0;
+    border: solid 1px #e4e4e4;
     width: 180px;
     height: 180px;
 
@@ -411,9 +412,13 @@ header{
     width: 150px;
 }
 
+.producto-fondo > img:hover {
+    transform: translate(0,-10px);
+}
+
 .info-producto {
-    box-shadow: 0px -5px 15px rgb(87, 87, 87);
     border-radius: 0 0 0.5rem 0.5rem;
+    border: solid 1px #e4e4e4;
     position: relative;
     width: 180px;
     height: 70px;
@@ -491,11 +496,14 @@ footer > section {
 
 
 
-.menu-2 div .cont-menu{
-    
+.menu-2 {
+    width: auto;
 }
 
-
+.menu-2 div img {
+    width: 19px;
+    height: auto;
+}
 
 #dark-mode{
     width: 18px;
@@ -513,23 +521,17 @@ footer > section {
     position: relative;
 }
 
-
-#hamburgesa{
-    position: relative;
-    z-index: 10;
-}
-
 /*estilos para el contenedor del menu*/
 .cont-menu{
     display: flex;
     flex-direction: row;
     justify-content: center;
     background-color: transparent;
-    width: 0;
-    height: 0;
+    width: auto;
+    height: auto;
     position: relative;
-    top: 0;
-    right: 0;
+    top: 0px;
+    right: 700px;
 }
 
 /*estilos para el listado del menu*/
@@ -543,9 +545,13 @@ footer > section {
     justify-content: flex-end;
     transition: none;
     flex-direction: row;
+    gap: 1rem;
      
  }
 
+ .cont-menu ul li:nth-child(1) {
+     color: #e74260;
+ }
  
  
  .cont-menu ul li{
@@ -571,7 +577,7 @@ footer > section {
 }
 
 .detalles{
-    margin-left: 100px;
+    margin-left: 330px;
 }
 
 .detalles > h3 {
@@ -602,6 +608,7 @@ footer > section {
 
 
 .presentacion{
+    margin-right: 250px;
     display: flex;
     justify-content: end;
 }
@@ -622,97 +629,100 @@ footer > section {
 
 /* --------------------PRODUCTOS--------------------- */
 
+
 .productos-contenedor{
     margin-top: 50px;
+
 }
-
-
 
 .productos-filtros{
-    display: grid;
-    grid-template-columns: repeat(8,1fr);
-    gap: 1.5rem;
-}
-
-.producto-filtros {
-    grid-column-start: 3;
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
 }
 
 .producto-linea::before {
-    content: "";
-    position: absolute;
-    width: 1px;
-    height: 40px;
-    background-color: black;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
+    margin: auto -30px;
 }
 
 .producto-linea {
     position: relative;
 }
 
+.producto-item h4 {
+    font-size: 20px;
+}
+
+.producto-item span {
+    font-size: small;
+}
+
+/* -----------CARTAS PRODUCTOS------------ */
+
 .estilos-contenedor{
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
+    justify-content: center;
+    flex-direction: row;
     align-items: center;
-    gap: 4rem;
 }
 
 .producto-fondo {
-    background-color: lightslategrey;
-    text-align: center;
-    padding: .25rem 0;
-    border-radius: 0.5rem 0.5rem 0 0;
-    width: 180px;
-    height: 180px;
+    width: 240px;
+    height: 240px;
 
 }
 
 .producto-fondo > img {
-    width: 150px;
+    width: 220px;
 }
 
 .info-producto {
-    box-shadow: 0px -5px 15px rgb(87, 87, 87);
-    border-radius: 0 0 0.5rem 0.5rem;
-    position: relative;
-    width: 180px;
-    height: 70px;
+    width: 240px;
+    height: 100px;
 }
 
-
-.info-producto > h4, .info-producto > span,
- .info-producto > p {
-     margin-left: .5rem;
-}
 
 .info-producto > h4 {
-    font-size: 1.2rem;
-    margin-top: 1.3rem;
-    display: inline-block;
+    font-size: 1.5rem;
+    margin-top: 1.4rem;
+
 }
 
 .info-producto > span {
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
-.boton-productos{
-    display: inline-flex;
-    position: absolute;
-    right: 1rem;
-    top: -1.25rem;
-    padding: .625rem;
-    border-radius: 50%;
-    box-shadow: 0px 5px 15px #575757;
-    cursor: pointer;
-}
 
 .boton-productos > img {
-    width: 15px;
+    width: 20px;
+}
+
+/* ---------------FOOTER--------------- */
+
+footer {
+    margin-top: 80px;
+    background-color: #b1b1b1;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+
+footer > section {
+    padding: 30px;
+    margin-top: 10px;
+}
+
+.listas-footer > li{
+    margin-top: 1rem;
+}
+
+.face-tamano{
+    width: 25px;
+}
+
+.listas-display{
+    cursor: pointer;
+    display:flex;
+    gap: 1rem;
 }
     
 } 
