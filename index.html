@@ -10,7 +10,7 @@
 
 </head>
 <body>
-    <header>
+    <header class="">
         <nav class="navbar">
             <div class="logo-academlo">
                 <a href=""><img src="./assets/imagenes/favicon.png" alt=""></a>
@@ -54,15 +54,16 @@
             </div>
 
             <div class="cart__container">
-                <div class="cart-empty mostrar">
+                <div class="cart-empty ">
                     <img src="./assets/imagenes/empty-cart.png" alt="">
                     <h2>Your cart is empty</h2>
                     <p>You can add items to your cart by clicking on the add button on the products page</p>
                 </div>
 
                 <!-- contenido agregado al Carrito -->
-                <div class="contenidoCarrito" id="agregados">
-                    <section class="card-carrito">
+                <div class="contenidoCarrito mostrar" id="agregados">
+                    <!--
+                    <section class="card-carrito card-fuera">
                         <img src="./assets/imagenes/featured1.png" alt="">
                         <div>
                             <h4>Hoddies</h4>
@@ -91,7 +92,7 @@
                     <section class="card-carrito card-fuera">
                         <img src="./assets/imagenes/featured2.png" alt="">
                         <div>
-                            <h4>Hoddies</h4>
+                            <h4>Shirts</h4>
                             <div class="datos-card">
                                 <span>stock:10</span>
                                 <span>$14.00</span>
@@ -117,7 +118,7 @@
                     <section class="card-carrito card-fuera">
                         <img src="./assets/imagenes/featured3.png" alt="">
                         <div>
-                            <h4>Hoddies</h4>
+                            <h4>Sweatshirts</h4>
                             <div class="datos-card">
                                 <span>stock:10</span>
                                 <span class="total-item-card">$14.00</span>
@@ -140,8 +141,8 @@
                             </div>
                         </div>
                     </section>
+                -->
                 </div>
-
                 <div class="cart__prices">
                     <span class="cart__prices-item">
                         <span id="items-count">0</span>
@@ -209,7 +210,7 @@
                         <h4>$14.00</h4>
                         <span>| Stock: 10</span>
                         <p>Hoodies</p>
-                        <button class="boton-productos"><img src="./assets/imagenes/boton-agregar.png" alt=""></button>
+                        <button class="boton-productos" id="btn-hoodies"><img src="./assets/imagenes/boton-agregar.png" alt=""></button>
                     </div>
                 </article>
                 <article class="shirts carta">
@@ -220,7 +221,7 @@
                         <h4>$24.00</h4>
                         <span>| Stock: 15</span>
                         <p>Shirts</p>
-                        <button class="boton-productos"><img src="./assets/imagenes/boton-agregar.png" alt=""></button>
+                        <button class="boton-productos" id="btn-shirts"><img src="./assets/imagenes/boton-agregar.png" alt=""></button>
                     </div>
                 </article>
                 <article class="sweatshirts carta">
@@ -231,7 +232,7 @@
                         <h4>$24.00</h4>
                         <span>| Stock: 20</span>
                         <p>Sweatshirts</p>
-                        <button class="boton-productos"><img src="./assets/imagenes/boton-agregar.png" alt=""></button>
+                        <button class="boton-productos" id="btn-sweatshirts"><img src="./assets/imagenes/boton-agregar.png" alt=""></button>
                     </div>
                 </article>
             </div>
