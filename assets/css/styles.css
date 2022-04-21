@@ -357,6 +357,9 @@ header{
     margin-top: 50px;
 }
 
+.producto-item {
+    cursor: pointer;
+}
 
 
 
@@ -469,6 +472,7 @@ footer > section {
 
 .listas-footer > li{
     margin-top: 1rem;
+    cursor: pointer;
 }
 
 .face-tamano{
