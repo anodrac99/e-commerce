@@ -55,62 +55,48 @@ window.addEventListener('scroll', ()=>{
 
 });
 
-//Funcionalidad agregar productos al carrito
-//Datos productos
 
-let productos ={"articulo":[{"name":'hoodies',
-'stock':12,
-'valor': 14.00,
-'cantidad': 0,
-'src' : "./assets/imagenes/featured1.png"
-
-},
-{"name": "shirts",
-'stock': 15,
-'valor': 24.00,
-'cantidad':0,
-'src': "./assets/imagenes/featured2.png"
-
-},
-{'name': 'sweatshirt',
-'stock': 20,
-'valor': 22.00,
-'cantidad': 0,
-'src' : "./assets/imagenes/featured3.png"
-
-}
-]};
 
 //productos en pagina
-
-
-const idAll = document.getElementsByClassName('producto-item')[0];
-const idHoodies = document.getElementsByClassName('producto-item')[1];
-const idShirts = document.getElementsByClassName('producto-item')[2];
-const idSweatshirts = document.getElementsByClassName('producto-item')[3];
+const idAll = document.getElementById('all-products');
+const idHoodies = document.getElementById('hoodies-products');
+const idShirts = document.getElementById('shirts-products');
+const idSweatshirts = document.getElementById('sweatshirt-products');
 const articulos = document.getElementsByClassName('carta');
 
-console.log(idHoodies);
-console.log(articulos[0]);
 
-function mostrarProducto (){
-    if(){}
+idAll.onclick = mostrarTodo
+
+idHoodies.onclick = mostrarHoodie
+idShirts.onclick = mostrarShirts
+idSweatshirts.onclick= mostrarSweatshirts
+
+function mostrarHoodie(){
+    articulos[1].classList.add('mostrar')
+    articulos[2].classList.add('mostrar')
+    articulos[0].classList.remove('mostrar')
+
+};
+
+function mostrarShirts(){
+    articulos[0].classList.add('mostrar')
+    articulos[2].classList.add('mostrar')
+    articulos[1].classList.remove('mostrar')
+};
+
+function mostrarSweatshirts(){
+        articulos[0].classList.add('mostrar')
+        articulos[1].classList.add('mostrar')
+        articulos[2].classList.remove('mostrar')
 }
 
-const mostrarHoodies = idHoodies.addEventListener('click', () => {
-    articulos[1].classList.add('mostrar')
-    articulos[2].classList.add('mostrar')
-})
+function mostrarTodo() {
+    articulos[0].classList.remove('mostrar')
+    articulos[1].classList.remove('mostrar')
+    articulos[2].classList.remove('mostrar')
+}
 
-const mostrarShirts = idShirts.addEventListener('click', () => {
-    articulos[0].classList.add('mostrar')
-    articulos[2].classList.add('mostrar')
-})
 
-const mostrarSweatshirts = idSweatshirts.addEventListener('click', () => {
-    articulos[0].classList.add('mostrar')
-    articulos[1].classList.add('mostrar')
-})
 
 
 
@@ -120,18 +106,169 @@ const btnShirts = document.getElementById('btn-shirts');
 const btnSweatshirts = document.getElementById('btn-sweatshirts');
 const contenedorCarrito = document.getElementById('agregados');
 const carritoVacio = document.getElementsByClassName('cart-empty')[0];
-console.log(carritoVacio);
-console.log(btnShirts);
-console.log(btnSweatshirts);
-console.log(btnHoodies);
 
-let carritoDeCompras = [];
+const carroConProductos = document.getElementById( "agregados" )
+let imgCardCarrito = document.getElementById('card-carrito__img')
+const list = document.getElementById('agregados')
 
- const agregarHoddie = btnHoodies.addEventListener('click',(e)=>{
-     
+let productos ={"articulo":[{"name":'hoodies',
+'stock':12,
+'valor': 14.00,
+'cantidad': 1,
+'src' : "assets/imagenes/featured1.png"
+
+},
+{"name": "shirts",
+'stock': 15,
+'valor': 24.00,
+'cantidad':1,
+'src': "./assets/imagenes/featured2.png"
+
+},
+{'name': 'sweatshirts',
+'stock': 20,
+'valor': 22.00,
+'cantidad':1,
+'src' : "./assets/imagenes/featured3.png"
+
+}
+]};
+
+
+
+let carritoDeCompras = { };
+
+
+//Agregar hoodies al carrito de compra
+let agregarHoodie = btnHoodies.addEventListener('click',(e)=>{
+     let variable = productos.articulo[0].name;
+        
+        if(carritoDeCompras[variable]!== undefined){
+            console.log("se sumo");
+           carritoDeCompras.hoodies+=1;
+
+        }else{
+
+            carritoDeCompras[variable] = 1;
+            agregarCarta(0);
+
+        }
+
+});
+
+
+function agregarCarta(item) {
+    
+    imgCard=`
+    <section class="card-carrito " id="card-carrito">
+        <img src="${productos.articulo[item].src}" alt="" id="card-carrito__img">
+        <div>
+            <h4>${productos.articulo[item].name}</h4>
+            <div class="datos-card">
+                <span class="datos-card-stock">Stock:${productos.articulo[item].stock}</span>
+                <span class="datos-card-valor">$${productos.articulo[item].valor}</span>
+            </div>
+            <span class="total-item-card">subtotal:$${productos.articulo[item].valor} </span>
+            <div class="control-card">
+                <span>
+                    <button>
+                        -
+                    </button>
+                </span>
+                <span>
+                ${productos.articulo[item].cantidad}units
+                </span>
+                <span>
+                    <button>
+                        +
+                    </button>
+                </span>
+            </div>
+        </div>
+    </section>
+    `;
+    list.innerHTML += imgCard
+    
+}
+
+
+
+
+
+
+const agregarShirts = btnShirts.addEventListener('click',() =>{
+    let variable = productos.articulo[1].name;
+
+    if(carritoDeCompras[variable]!== undefined){
+        console.log("se sumo");
+        carritoDeCompras.shirts+=1;
+    }else{
+
+        carritoDeCompras[variable] = 1;
+        agregarCarta(1); 
+      }
+});
+
+
+
+const agregarSweatshirts = btnSweatshirts.addEventListener('click',(e)=>{
+    let variable = productos.articulo[2].name;
+        
+    if(carritoDeCompras[variable]!== undefined){
+        console.log("se sumo");
+        carritoDeCompras.sweatshirts+=1;
+    }else{
+
+        carritoDeCompras[variable] = 1;
+        agregarCarta(2);
+      }
+
+});
+    
+
+
+
+
+//quitar carrito vacio
+const todosLosBotones = document.querySelectorAll(".boton-productos");
+
+const cuandoSeVaAAgregar= function (e){
     carritoVacio.classList.add('mostrar');
     contenedorCarrito.classList.remove('mostrar');
+    
+};
+
+todosLosBotones.forEach(e=>{
+    e.addEventListener('click',cuandoSeVaAAgregar)
 });
+
+
+
+/*
+carritoVacio.classList.remove('mostrar');
+contenedorCarrito.classList.add('mostrar');
+*/
+
+
+
+
+//Funcionalidad agregar productos al carrito
+//Datos productos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
