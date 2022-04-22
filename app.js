@@ -98,6 +98,8 @@ function mostrarTodo() {
 
 
 
+const itemsTotal = document.getElementById('items-count');
+const carritoSpan=document.getElementById('carrito-span');
 
 
 //variables botones
@@ -136,25 +138,103 @@ let productos ={"articulo":[{"name":'hoodies',
 
 
 
-let carritoDeCompras = { };
+
+
+let carritoDeCompras = {};
+let totalCompra = 0;
+let unidadesTotales = 0;
+
+
+
 
 
 //Agregar hoodies al carrito de compra
-let agregarHoodie = btnHoodies.addEventListener('click',(e)=>{
+const agregarHoodie = btnHoodies.addEventListener('click',(e)=>{
      let variable = productos.articulo[0].name;
+     let unidadesHoodies = 0
+     const cartTotal = document.getElementById('cart-total')
+     
         
         if(carritoDeCompras[variable]!== undefined){
-            console.log("se sumo");
            carritoDeCompras.hoodies+=1;
            //modificar span de unidades
+           unidadesHoodies = document.getElementById('unidades-hoodies');
+           unidadesHoodies.innerText = `${carritoDeCompras.hoodies} units`;
+           
+
+
 
         }else{
-
+            
             carritoDeCompras[variable] = 1;
             agregarCarta(0);
+            unidadesHoodies.innerText = `${carritoDeCompras.hoodies} units`;
+            
 
         }
+             totalCompra += precioHoodie;
+             unidadesTotales +=1 ;
+             itemsTotal.innerText=`${unidadesTotales}`
+            carritoSpan.innerText=`${unidadesTotales}`
+            cartTotal.innerText=`$${totalCompra}`
+            console.log(totalCompra);
 
+});
+
+const agregarShirts = btnShirts.addEventListener('click',() =>{
+    let variable = productos.articulo[1].name;
+    let unidadesShirts = 0;
+    const cartTotal = document.getElementById('cart-total')
+    
+    if(carritoDeCompras[variable]!== undefined){
+        
+        carritoDeCompras.shirts+=1;
+        unidadesShirts = document.getElementById('unidades-shirts');
+        unidadesShirts.innerText = `${carritoDeCompras.shirts} units`;
+        
+    }else{
+        
+        carritoDeCompras[variable] = 1;
+        agregarCarta(1); 
+        unidadesShirts.innerText = `${carritoDeCompras.shirts} units`;
+        
+    }
+    
+        totalCompra += precioShirts;
+        unidadesTotales +=1 ;
+        itemsTotal.innerText=`${unidadesTotales}`
+        cartTotal.innerText=`$${totalCompra}`
+        carritoSpan.innerText=`${unidadesTotales}`
+    
+    
+    
+});
+
+
+
+const agregarSweatshirts = btnSweatshirts.addEventListener('click',(e)=>{
+    let variable = productos.articulo[2].name;
+    let unidadesSweatshirts = 0;
+    const cartTotal = document.getElementById('cart-total');
+
+    if(carritoDeCompras[variable]!== undefined){
+        
+        carritoDeCompras.sweatshirts+=1;
+        unidadesSweatshirts = document.getElementById('unidades-sweatshirts');
+        unidadesSweatshirts.innerText = `${carritoDeCompras.sweatshirts} units`;
+        
+    }else{
+        unidadesSweatshirts.innerText = `${carritoDeCompras.sweatshirts} units`;
+        carritoDeCompras[variable] = 1;
+        agregarCarta(2);
+        
+    }
+        unidadesTotales +=1 ;
+        itemsTotal.innerText=`${unidadesTotales}`;
+        totalCompra += precioShirts;
+        cartTotal.innerText=`$${totalCompra}`
+        carritoSpan.innerText=`${unidadesTotales}`
+    
 });
 
 
@@ -176,7 +256,7 @@ function agregarCarta(item) {
                         -
                     </button>
                 </span>
-                <span>
+                <span id="unidades-${productos.articulo[item].name}">
                 ${productos.articulo[item].cantidad}units
                 </span>
                 <span>
@@ -190,42 +270,9 @@ function agregarCarta(item) {
     `;
     list.innerHTML += imgCard
     
+    
 }
 
-
-
-
-
-
-const agregarShirts = btnShirts.addEventListener('click',() =>{
-    let variable = productos.articulo[1].name;
-
-    if(carritoDeCompras[variable]!== undefined){
-        console.log("se sumo");
-        carritoDeCompras.shirts+=1;
-    }else{
-
-        carritoDeCompras[variable] = 1;
-        agregarCarta(1); 
-      }
-});
-
-
-
-const agregarSweatshirts = btnSweatshirts.addEventListener('click',(e)=>{
-    let variable = productos.articulo[2].name;
-        
-    if(carritoDeCompras[variable]!== undefined){
-        console.log("se sumo");
-        carritoDeCompras.sweatshirts+=1;
-    }else{
-
-        carritoDeCompras[variable] = 1;
-        agregarCarta(2);
-      }
-
-});
-    
 
 
 
@@ -243,34 +290,29 @@ todosLosBotones.forEach(e=>{
     e.addEventListener('click',cuandoSeVaAAgregar)
 });
 
+const btnCheckOut = document.getElementById('cart-checkout');
 
+btnCheckOut.addEventListener('click',()=>{
+    carritoVacio.classList.remove('mostrar');
+    contenedorCarrito.classList.add('mostrar');
+    const cartTotal = document.getElementById('cart-total');
+        unidadesTotales =0;
+        totalCompra=0;
+    itemsTotal.innerText=`${unidadesTotales}`
+    carritoSpan.innerText=`${unidadesTotales}`
+    cartTotal.innerText=`$${totalCompra}`
+
+
+});
 
 /*
 carritoVacio.classList.remove('mostrar');
 contenedorCarrito.classList.add('mostrar');
 */
-
-
-
-
-//Funcionalidad agregar productos al carrito
-//Datos productos
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//Precio articulos
+const precioHoodie = productos.articulo[0].valor;
+const precioShirts = productos.articulo[1].valor;
+const precioSweatshirts = productos.articulo[2].valor;
 
 
 

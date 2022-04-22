@@ -82,8 +82,7 @@ header{
     position: relative;
 }
 
-.menu-22::after{
-    content: '0';
+.menu-22 span{
     color: white;
     position: absolute;
     right: -1px;
@@ -91,7 +90,7 @@ header{
     font-size: 10px;
     background-color: black;
     border-radius: 50%;
-    padding: 1px;
+    padding: 3px;
 }
 
 #hamburgesa{
