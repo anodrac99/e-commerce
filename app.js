@@ -146,6 +146,7 @@ let agregarHoodie = btnHoodies.addEventListener('click',(e)=>{
         if(carritoDeCompras[variable]!== undefined){
             console.log("se sumo");
            carritoDeCompras.hoodies+=1;
+           //modificar span de unidades
 
         }else{
 
@@ -160,7 +161,7 @@ let agregarHoodie = btnHoodies.addEventListener('click',(e)=>{
 function agregarCarta(item) {
     
     imgCard=`
-    <section class="card-carrito " id="card-carrito">
+    <section class="card-carrito " id="card-carrito-${productos.articulo[item].name}">
         <img src="${productos.articulo[item].src}" alt="" id="card-carrito__img">
         <div>
             <h4>${productos.articulo[item].name}</h4>
